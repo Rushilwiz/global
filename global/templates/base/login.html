@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_with_nav.html' %}
 
 {% block head %}
 <style>
@@ -14,15 +14,14 @@
 </style>
 {% endblock %}
 
-{% block body %}
-    <h1>bruh</h1>
-    <div class="main">
-        <div class="login-box">
-            <h4>To access this application, you must <b>log in with your Intranet account.</b></h4>
-            <form action="{% url 'social:begin' 'ion' %}{% if request.GET.next %}?next={{ request.GET.next|urlencode }}{% endif %}" method="post">
-                {% csrf_token %}
-                <input class="q-btn" type="submit" value="Login with Ion">
-            </form>
-        </div>
+{% block main %}
+<div class="main">
+    <div class="login-box">
+        <h4>To access this application, you must <b>log in with your Intranet account.</b></h4>
+        <form action="{% url 'social:begin' 'ion' %}{% if request.GET.next %}?next={{ request.GET.next|urlencode }}{% endif %}" method="post">
+            {% csrf_token %}
+            <input class="q-btn" type="submit" value="Login with Ion">
+        </form>
     </div>
+</div>
 {% endblock %}

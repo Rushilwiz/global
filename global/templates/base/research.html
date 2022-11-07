@@ -1,0 +1,34 @@
+{% extends 'base_with_nav.html' %}
+
+{% block head %}
+<style>
+    .main {
+        text-align: center;
+        height: 60vh;
+    }
+
+    .login-box {
+        position: relative;
+        top: 7vh;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<div>
+    <h1>Research <a href="{% url 'base:add-link' %}"><button type="button" class="btn btn-primary float-end"><i class="bi bi-plus"></i> Add Link</button></a></h1>
+</div>
+<div class="cards">
+    {% for link in links %}
+    <div class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">{{ link.title }}</h4>
+        <h5 class="card-link mb-2 text-muted">{{ link.source }}</h5>
+        <h6 class="card-link mb-1">Posted by: {{ link.author.first_name }} {{ link.author.last_name }}</h6>
+        <h6 class="card-link mb-1">{{ link.author.project }}</h6>
+        <p class="card-text">{{ link.description | truncatechars:1000 }}</p>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

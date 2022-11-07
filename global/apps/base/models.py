@@ -20,3 +20,24 @@ class User(AbstractUser):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+class Link(models.Model):
+    SOURCE_CHOICES = (
+        ('Website', 'Website'),
+        ('Book', 'Book'),
+        ('Article', 'Journal Article'),
+        ('Video', 'Video'),
+        ('Podcast', 'Podcast'),
+        ('Other', 'Other')
+    )
+
+    id = models.AutoField(primary_key=True)
+
+    title = models.CharField(max_length=100)
+    source = models.CharField(max_length=20, choices=SOURCE_CHOICES, default='website')
+    description = models.TextField(max_length=5000)
+    link = models.CharField(max_length=200)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.title}"

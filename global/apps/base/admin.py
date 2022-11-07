@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User
+from .models import User, Link
 
 @admin.action(description="Mark as Global Student")
 def mark_global_student(modeladmin, request, queryset):
@@ -16,3 +16,4 @@ class UserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(User, UserAdmin)
+admin.site.register(Link)

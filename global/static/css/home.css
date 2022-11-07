@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+#hero {
+	overflow: hidden;
+	cursor: crosshair;
+}
+
+#hero h1 {
+	font-family: 'Roboto Mono', monospace;
+	position: absolute;
+	color:  white;
+	top: 20px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display: block;
+	line-height: .75em;
+}
+
+#hero span {
+	font-size: .5em;
+}
+
+.content {
+	padding:  16px;
+}

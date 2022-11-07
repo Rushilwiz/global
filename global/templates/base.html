@@ -16,16 +16,15 @@
   </head>
   <body>
     {% block body %}{% endblock %}
-<footer class="bg-light">
+  <footer class="bg-light">
     <ul class="nav justify-content-center border-bottom p-3 m-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      <li class="nav-item"><a href="{% url 'base:index' %}" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="{% url 'base:members' %}" class="nav-link px-2 text-muted">Members</a></li>
+      <li class="nav-item"><a href="{% url 'base:research' %}" class="nav-link px-2 text-muted">Research</a></li>
+      <li class="nav-item"><a href="" class="nav-link px-2 text-muted">Projects</a></li>
+      <li class="nav-item"><a href="{% url 'base:about' %}" class="nav-link px-2 text-muted">About</a></li>
+      <li class="nav-item"><a href="{% url 'base:login' %}" class="nav-link px-2 text-muted">Login</a></li>
     </ul>
-   </footer>
-  <footer>
     <div class="row border-bottom pb-3 m-3">
       <div class="col">
         <h2>Contact us!</h2>

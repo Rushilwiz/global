@@ -1,0 +1,16 @@
+{% extends "base_with_nav.html" %}
+
+{% load static %}
+
+{% block main %}
+    <h1 class="primary"><strong>Add Link</strong></h1>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <h6>{{ field.label }}</h6>
+            <p>{{ field }}</p>
+        {% endfor %}
+        <input class="btn q-btn" type="submit" name="button-save" value="Save">
+    </form>
+{% endblock %}
