@@ -138,5 +138,6 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 
 CURRENT_YEAR = (date.today() - relativedelta(months=7)).year
+END_YEAR = CURRENT_YEAR + 1
 
 from .secret import *
