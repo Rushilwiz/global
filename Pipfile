@@ -7,6 +7,7 @@ name = "pypi"
 django = "*"
 gunicorn = "*"
 social-auth-app-django = "*"
+python-dateutil = "*"
 
 [dev-packages]
 

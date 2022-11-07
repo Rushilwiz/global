@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load settings %}
 
 {% block head %}
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -9,7 +10,7 @@
 {% block body %}
 
 <div id="hero">
-    <h1>global studies<br><span>TJHSST 2022 - 2023</span></h1>
+    <h1>global studies<br><span>TJHSST {% settings_value "CURRENT_YEAR" %} - 2023</span></h1>
 </div>
 
 {% include "nav.html" %}

@@ -134,4 +134,9 @@ SOCIAL_AUTH_USER_FIELDS = [
     "username",
 ]
 
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
+CURRENT_YEAR = (date.today() - relativedelta(months=7)).year
+
 from .secret import *
